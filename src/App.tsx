@@ -8,6 +8,7 @@ import {
 export default function App() {
   const [time, setTime] = useState(new Date());
   const [gaji, setGaji] = useState<number>(2844.19);
+  const [employeeName, setEmployeeName] = useState('Imie');
   
   const [currentDate, setCurrentDate] = useState(new Date(2026, 2, 1)); // Start at March 2026
   
@@ -409,13 +410,17 @@ export default function App() {
             <div className="bg-purple-100 p-3 rounded-xl text-purple-600">
               <User className="w-5 h-5" />
             </div>
-            <div>
+            <div className="flex-1">
               <p className="text-[10px] text-slate-400 font-bold tracking-wider uppercase mb-0.5">
                 Nama Pekerja
               </p>
-              <p className="font-bold text-slate-800 text-sm">
-                Imie
-              </p>
+              <input
+                type="text"
+                value={employeeName}
+                onChange={(e) => setEmployeeName(e.target.value)}
+                className="w-full font-bold text-slate-800 text-sm bg-transparent border-none p-0 focus:ring-0 outline-none"
+                placeholder="Masukkan Nama Pekerja"
+              />
             </div>
           </div>
 
